@@ -1,0 +1,68 @@
+.firstInput{
+    margin-left: -50px !important;
+}
+
+input{
+    background-color: rgb(209, 208, 208) !important;
+}
+.remove-btn{
+    border-radius: 70%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.add-btn{
+    border-radius: 69%;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 20px;
+}
+.save-btn{
+    margin-top: 40px;
+
+}
+form{
+    max-width: 850px;
+    padding: 20px;
+}
+.totaldiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid linen ;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 0 !important;
+    border-radius: 60px;
+}
+.divide1{
+    width: 50%;
+    min-height: 500px;
+    background-color: rgb(226, 239, 246);
+    border-radius: 60px;
+
+
+}
+.divide2{
+    width: 50%;
+}
+.mtop{
+    margin-top: 20px;
+}
+.mtop-1{
+    margin-top: 190px;
+}
+
+@media screen and (max-width: 1000px) {
+    .totaldiv{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+  
+    }
+
+
+    .loop {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
