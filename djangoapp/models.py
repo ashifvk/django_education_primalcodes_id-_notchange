@@ -12,4 +12,11 @@ class Education(models.Model):
     university=models.CharField(max_length=30)
     year=models.CharField(max_length=30)
     reg_id=models.ForeignKey(Candidate,on_delete=models.CASCADE)
+
+class todo(models.Model):
+    player=models.CharField(max_length=30)
+    club=models.CharField(max_length=30)
+    value=models.CharField(max_length=30)
+    # def __str__(self):
+    #     return self.name
    

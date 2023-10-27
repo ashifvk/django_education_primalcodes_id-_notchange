@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
-from .models import Candidate,Education
+from .models import Candidate,Education,todo
 from django.http import HttpResponse
 from django.http import JsonResponse
-
+from .forms import Todoform
+from django.forms import modelformset_factory
 # Create your views here.
 
 def index(request):
@@ -144,5 +145,47 @@ def updateData(request,id):
     # return render(request,'edit.html',{'success': success})
     
     return HttpResponse("ok", status=200)
+
+
+
+# def testindex(request):
+#     playerdata=todo.objects.all()
+#     todoformset=modelformset_factory(todo,form=Todoform)
+#     if request.method == 'POST':
+#         formset = todoformset(request.POST, queryset=todo.objects.none())
+#         print('gaiiii')
+#         print(formset)
+
+#         if formset.is_valid():
+#            instances= formset.save()
+#            for instance in instances:
+#                instance.save()
+#            print("Formset saved successfully")
+
+    
+#         formset = todoformset(queryset=todo.objects.none())
+
+#     context = {'playerdata': playerdata, 'formset': formset}
+
+#     return render(request,'testform.html',locals())
+
+def testindex(request):
+    if request.method == 'POST':
+        todoformset = modelformset_factory(todo, form=Todoform)
+        formset = todoformset(request.POST, queryset=todo.objects.none())
+
+        if formset.is_valid():
+            instances = formset.save()
+            print("Formset saved successfully")
+
+    else:
+        todoformset = modelformset_factory(todo, form=Todoform)
+        formset = todoformset(queryset=todo.objects.none())
+
+    playerdata = todo.objects.all()
+
+    context = {'playerdata': playerdata, 'formset': formset}
+    return render(request, 'testform.html', context)
+
 
 

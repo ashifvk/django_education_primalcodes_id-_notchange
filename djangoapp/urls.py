@@ -7,4 +7,7 @@ urlpatterns = [
     path('alluser',views.alluser,name='alluser'), 
     path('editData/<int:id>',views.editData,name='editData'),
     path('updateData/<int:id>/',views.updateData,name='updateData'),
+    path('testindex',views.testindex,name='testindex'),
+    # path('addtodo',views.addtodo,name='addtodo'),
+
 ]
